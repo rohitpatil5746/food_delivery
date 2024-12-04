@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { increment } from "../../Redux/Counter/counterSlice";
 
 export default function Cards({
   image,
@@ -10,6 +12,7 @@ export default function Cards({
   price,
   renderRatingIcons,
 }) {
+  const dispatch = useDispatch();
   return (
     <Col sm={6} lg={4} xl={3} className="mb-4">
       <Card className="overflow-hidden ">
@@ -31,8 +34,12 @@ export default function Cards({
             <div className="menu_price">
               <h5 className="mb-0">${price}</h5>
             </div>
-            <div className="add_to_card ">
-              <Link className="text-decoration-none " to="/">
+            <div className="add_to_card  ">
+              <Link
+                onClick={() => dispatch(increment())}
+                className="text-decoration-none "
+                to="/"
+              >
                 <i class="bi bi-bag me-2"></i>
                 Add To Cart
               </Link>

@@ -10,18 +10,14 @@ import Section6 from "./Section6";
 import Section7 from "./Section7";
 
 export default function Home() {
+  
   return (
     <div>
       <Layout>
-        {/* home section hero banner  */}
         <Section1 />
-        {/* home section about */}
         <Section2 />
-        {/* home section menu */}
         <Section3 />
-        {/* home section Promotion */}
         <Section4 />
-        {/* home section Shop */}
         <Section5 />
         <Section6 />
         <Section7 />

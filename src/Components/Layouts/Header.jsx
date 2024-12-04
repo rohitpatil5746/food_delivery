@@ -4,16 +4,22 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo/logo.png";
+import { useSelector, useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const count = useSelector((state) => state.counter.value);
+  console.log(count);
+
   const [nav, setNav] = useState(false);
+
   // scroll Navbar
   const changeValueOnScroll = () => {
     const scrollValue = document?.documentElement?.scrollTop;
     scrollValue > 100 ? setNav(true) : setNav(false);
   };
+
   window.addEventListener("scroll", changeValueOnScroll);
   return (
     <header>
@@ -52,7 +58,7 @@ export default function Header() {
               <Nav.Link as={Link} to="/">
                 <div className="cart">
                   <i class="bi bi-bag fs-5"></i>
-                  <em className="roundpoint">2</em>
+                  <em className="roundpoint">{count}</em>
                 </div>
               </Nav.Link>
             </Nav>
