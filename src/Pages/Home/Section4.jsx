@@ -44,10 +44,8 @@ export default function Section4() {
           </Row>
         </Container>
       </section>
-{/* parralex scroll BG */}
-<section className="bg_paralex_scroll">
-    </section>
-
+      {/* parralex scroll BG */}
+      <section className="bg_paralex_scroll"></section>
     </>
   );
 }

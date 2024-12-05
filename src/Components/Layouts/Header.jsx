@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const count = useSelector((state) => state.counter.value);
-  console.log(count);
 
   const [nav, setNav] = useState(false);
 
